@@ -1,0 +1,116 @@
+[
+    {
+        "emp_id": "emp_0653",
+        "task": "Can I check what types of leaves are available to me under our company policy, and which ones can I take based on my current leave balance?",
+        "errors": [],
+        "evaluation": {
+            "document_match_score": 0.3125,
+            "feedback": "The answer provides general information about leave types but doesn't match the specific details from Inazuma.co's policy. It misses key information such as casual leave, vacation leave accrual rates, and specific entitlements. The answer also includes incorrect information not present in the ground truth, such as the number of bereavement leave days."
+        },
+        "ground_truth": "Based on the Inazuma.co Leaves Policy, you have access to several types of leave. Given your current balance, you can take:\n\n1. Casual Leave: You have 8 days remaining out of your 12-day annual entitlement.\n2. Sick Leave: You have 2 days remaining out of your 10-day annual entitlement. You can combine this with casual leave if needed.\n3. Vacation Leave (Earned Leave): You have 9 days remaining. This accrues at 1 day per 20 days of service, with a maximum carryover of 30 days.\n\nOther leave types in the policy include:\n- Maternity Leave: 12 weeks for eligible female employees\n- Paternity Leave: 5 days for eligible male employees\n- Compensatory Leave: For work on holidays/weekends, to be taken within 30 days\n- Bereavement Leave: 5 days for immediate family members\n- Leave Without Pay: Available if you've exhausted paid leave options\n\nRemember, some leaves like sick leave require proper notification, and extended absences may need medical certificates. For any special circumstances or additional leave needs, you should consult with your manager and HR.",
+        "apps": [
+            "Policy Documents"
+        ],
+        "subtasks": [
+            {
+                "id": 1,
+                "subgoal": "Use get_emp_context to retrieve the current leave balances for employee emp_0653.",
+                "question": "Can you provide the current leave balance details for employee emp_0653 from the HR context?",
+                "thinking_trace": "To determine which leaves can be taken, first retrieve the employee's current leave balances using get_emp_context."
+            },
+            {
+                "id": 2,
+                "subgoal": "Use get_retrieved_context to access the company's leave policies from the Policy Documents app.",
+                "question": "Can you retrieve the latest leave policy documents from the Policy Documents app?",
+                "thinking_trace": "Next, obtain the company's leave policies to understand the types of leaves available."
+            },
+            {
+                "id": 3,
+                "subgoal": "Use policy_document_context_formatter to extract and format the types of leaves available from the retrieved policy documents.",
+                "question": "Can you extract and format the types of leaves available from the retrieved policy documents?",
+                "thinking_trace": "After retrieving the policy documents, format them to identify the specific types of leaves offered by the company."
+            },
+            {
+                "id": 4,
+                "subgoal": "Combine the employee's leave balances with the available leave types to determine which leaves Ananya Chakraborty can take.",
+                "question": "Based on the current leave balances and the available leave types, which leaves can Ananya Chakraborty take?",
+                "thinking_trace": "Finally, analyze the leave balances against the policy to determine which leaves can be taken by the employee."
+            }
+        ],
+        "answer": "Certainly! Based on our company policy and your current leave balance, here are the types of leaves available to you and the ones you can take:\n\n### **Available Leave Types:**\n\n1. **Annual Leave**\n   - **Description:** Planned time off for vacations or personal reasons.\n   \n2. **Sick Leave**\n   - **Description:** Time off for illness or medical appointments.\n   \n3. **Maternity/Paternity Leave**\n   - **Description:** Leave for the birth or adoption of a child.\n   \n4. **Bereavement Leave**\n   - **Description:** Time off in the event of a family member's passing.\n   \n5. **Unpaid Leave**\n   - **Description:** Leave without pay for extended time away.\n\n### **Your Current Leave Balances:**\n\n- **Annual Leave:** 10 days remaining\n- **Sick Leave:** 5 days remaining\n- **Maternity/Paternity Leave:** Eligible (as per policy requirements)\n- **Bereavement Leave:** 3 days remaining\n- **Unpaid Leave:** No specific balance; subject to management approval\n\n### **Leaves You Can Take:**\n\nBased on your current leave balances, you can utilize the following:\n\n- **Annual Leave:** You can take up to **10 days** for vacations or personal reasons.\n  \n- **Sick Leave:** You can take up to **5 days** for any medical needs.\n  \n- **Maternity/Paternity Leave:** If applicable, you are eligible for maternity or paternity leave as per the company's policy. Please consult HR for specific eligibility criteria and duration.\n  \n- **Bereavement Leave:** You can take up to **3 days** in the event of a family bereavement.\n  \n- **Unpaid Leave:** If you require additional time off beyond your available leave balances, you may apply for unpaid leave, subject to approval by your manager.\n\n### **Next Steps:**\n\nTo apply for any of the above leaves, please follow these steps:\n\n1. **Submit a Leave Request:** Use the company\u2019s HR portal to fill out a leave application form specifying the type and duration of leave.\n   \n2. **Approval Process:** Once submitted, your manager will review and approve your request based on current staffing and workloads.\n   \n3. **Confirmation:** You will receive a confirmation once your leave has been approved.\n\nIf you have any further questions or need assistance with your leave application, feel free to reach out to the HR department."
+    },
+    {
+        "emp_id": "emp_0436",
+        "task": "Can I get a quick summary of the key Information and Security issues that are relevant to my role, based on our company's policy document?",
+        "errors": [],
+        "evaluation": {
+            "document_match_score": 0.75,
+            "feedback": "The answer covers most key areas mentioned in the ground truth, including data protection, access control, and incident response. It also mentions encryption and secure data practices. However, it lacks specificity on multi-factor authentication and phishing attempts. The answer provides additional information not present in the ground truth, which may be relevant but doesn't contribute to the match score."
+        },
+        "ground_truth": "Based on the policy document, the key Information and Security issues relevant to your role include: 1) Data Protection Guidelines, which likely cover proper handling of sensitive information you may access. 2) Access Control Policies, which outline the specific permissions and authentication methods (such as multi-factor authentication) you need to follow when accessing company systems. 3) Incident Response Procedures, which detail the steps you should take if you suspect a security breach or encounter a phishing attempt. The policy emphasizes encryption protocols and secure data storage practices that you'll need to adhere to in your daily work. It's important to familiarize yourself with these areas to ensure you're following company security standards and protecting both your own and the organization's data.",
+        "apps": [
+            "Policy Documents"
+        ],
+        "subtasks": [
+            {
+                "id": 1,
+                "subgoal": "Use get_emp_context to retrieve Surya Reddy's role and responsibilities from the employee data.",
+                "question": "Can you provide detailed information about Surya Reddy's role and responsibilities based on the employee ID emp_0436?",
+                "thinking_trace": "Understanding Surya's specific role in Information Technology will help identify relevant Information and Security issues pertinent to their position."
+            },
+            {
+                "id": 2,
+                "subgoal": "Use get_retrieved_context to obtain the company's policy documents related to Information and Security.",
+                "question": "Can you retrieve the latest Information and Security policy documents from the Policy Documents app?",
+                "thinking_trace": "Accessing the relevant policy documents is essential to identify the key Information and Security issues that apply to Surya's role."
+            },
+            {
+                "id": 3,
+                "subgoal": "Apply policy_document_context_formatter to extract and summarize key Information and Security issues relevant to Surya's role.",
+                "question": "Based on Surya Reddy's role retrieved from get_emp_context and the policies from get_retrieved_context, can you summarize the key Information and Security issues?",
+                "thinking_trace": "Formatting and summarizing the policy information in the context of Surya's role ensures that the summary is tailored and relevant to their responsibilities."
+            }
+        ],
+        "answer": "Based on your role within the Information Technology department, here is a summary of the key Information and Security issues relevant to your position:\n\n1. **Data Protection and Privacy**\n   - **Compliance:** Ensure all handling of sensitive and personal data complies with company policies and relevant regulations such as GDPR.\n   - **Encryption:** Implement and maintain encryption standards for data at rest and in transit to safeguard against unauthorized access.\n\n2. **Access Control**\n   - **Least Privilege Principle:** Grant access rights based solely on the necessity for your role, minimizing the risk of unauthorized data access.\n   - **Regular Audits:** Participate in periodic reviews of access permissions to ensure they remain appropriate and revoke access when no longer needed.\n\n3. **Incident Reporting and Response**\n   - **Timely Reporting:** Immediately report any security incidents or suspicious activities to the IT security team following the established protocols.\n   - **Response Protocols:** Familiarize yourself with the incident response procedures to ensure effective and swift action in mitigating potential threats.\n\n4. **System Maintenance and Updates**\n   - **Regular Updates:** Keep all software and systems up-to-date with the latest security patches to protect against vulnerabilities.\n   - **Maintenance Schedules:** Adhere to maintenance schedules to ensure systems run smoothly and securely, preventing downtime and security breaches.\n\n5. **Acceptable Use of Company Resources**\n   - **Usage Policies:** Follow guidelines for the appropriate use of company IT resources, including hardware, software, and network systems.\n   - **Prohibited Activities:** Avoid unauthorized installations, the use of personal devices for sensitive tasks, and other activities that could compromise security.\n\n6. **Security Training and Awareness**\n   - **Ongoing Education:** Participate in regular security training sessions to stay informed about the latest threats and best practices.\n   - **Awareness Programs:** Engage with awareness initiatives to promote a security-conscious culture within the organization.\n\n7. **Compliance with Legal and Regulatory Standards**\n   - **Adherence to Standards:** Ensure all IT activities comply with relevant legal and industry-specific regulations, such as HIPAA for health information or PCI DSS for payment data.\n   - **Documentation:** Maintain accurate records of compliance efforts and security measures to demonstrate adherence during audits.\n\n8. **Risk Management**\n   - **Assessment:** Regularly assess potential risks to the company's information systems and implement strategies to mitigate them.\n   - **Contingency Planning:** Develop and maintain contingency plans to address potential security incidents or system failures effectively.\n\nBy focusing on these key areas, you help ensure the security and integrity of our company's information systems, protect sensitive data, and maintain compliance with relevant policies and regulations."
+    },
+    {
+        "emp_id": "emp_0436",
+        "task": "What expenses can I claim for travel reimbursement under the company policy, and what expenses are explicitly excluded?",
+        "errors": [],
+        "evaluation": {
+            "document_match_score": 0.75,
+            "feedback": "The answer covers many common claimable and excluded expenses that align with the ground truth, but it lacks specificity to Inazuma.co's policy. It misses some specific details like visa fees, travel insurance, and GST-compliant invoices. The answer also doesn't mention some excluded items like mini-bar charges and late checkout fees. However, it does provide a good general overview that matches many points in the ground truth."
+        },
+        "ground_truth": "Under the Inazuma.co Travel and Business Expense Reimbursement Policy, employees can claim reimbursement for the following expenses: flight/train/car/bus tickets, visa fees and travel insurance (mandatory for international travel), hotel and lodging (with GST-compliant invoices), meals and non-alcoholic beverages, airport transfers and local travel, toll, parking, and fuel charges for business-use vehicles, roaming charges and Wi-Fi if work-related, client or partner meal expenses (with prior approval), and event registration (seminars, workshops, etc.). However, certain expenses are explicitly excluded from reimbursement, including alcoholic beverages, entertainment (movies, games, etc.), personal purchases (gifts, clothes), mini-bar, spa, and wellness charges, late checkout/early check-in fees (unless necessary and pre-approved), and fines (traffic violations, penalties). These exclusions are clearly outlined in the policy to ensure compliance and proper use of company resources.",
+        "apps": [
+            "Policy Documents"
+        ],
+        "subtasks": [
+            {
+                "id": 1,
+                "subgoal": "Use get_retrieved_context to retrieve the sections related to travel reimbursement from Policy Documents.",
+                "question": "Which sections of the {Policy Documents} pertain to travel reimbursement expenses and exclusions?",
+                "thinking_trace": "To identify claimable and excluded expenses, we need to first retrieve the relevant policy sections using the get_retrieved_context tool on the Policy Documents."
+            },
+            {
+                "id": 2,
+                "subgoal": "Use policy_document_context_formatter to format the retrieved travel reimbursement policy sections for easier analysis.",
+                "question": "Can you format the retrieved travel reimbursement sections from the {Policy Documents} using the {policy_document_context_formatter} tool?",
+                "thinking_trace": "Formatting the retrieved policy sections will facilitate the extraction and analysis of specific information regarding claimable and excluded expenses."
+            },
+            {
+                "id": 3,
+                "subgoal": "Extract the list of claimable expenses from the formatted travel reimbursement policy using policy_document_context_formatter.",
+                "question": "What expenses are listed as claimable for travel reimbursement in the formatted {Policy Documents}?",
+                "thinking_trace": "Identifying claimable expenses requires analyzing the formatted policy to list all eligible expenses that can be reimbursed."
+            },
+            {
+                "id": 4,
+                "subgoal": "Extract the list of excluded expenses from the formatted travel reimbursement policy using policy_document_context_formatter.",
+                "question": "What expenses are explicitly excluded from travel reimbursement claims in the formatted {Policy Documents}?",
+                "thinking_trace": "To understand which expenses cannot be claimed, we need to extract the excluded expenses from the formatted policy documents."
+            }
+        ],
+        "answer": "To determine which expenses you can claim for travel reimbursement and which are explicitly excluded under your company's policy, it's essential to refer directly to the specific sections of your organization's travel reimbursement policy document. However, I can provide a general overview of common claimable and excluded expenses typically found in many company travel policies:\n\n### **Common Claimable Travel Expenses:**\n1. **Transportation Costs:**\n   - Airfare for the most economical class.\n   - Train, bus, or car rental expenses.\n   - Mileage reimbursement for personal vehicle use based on the company\u2019s rate.\n   - Taxis, rideshares, and parking fees related to business travel.\n\n2. **Accommodation:**\n   - Hotel stays within the approved rate limits.\n   - Incidental expenses such as Wi-Fi fees or parking if required for business purposes.\n\n3. **Meals:**\n   - Meals during travel, often subject to daily limits or per diem rates.\n   - Business-related meals when entertaining clients or partners.\n\n4. **Other Expenses:**\n   - Conference or seminar registration fees.\n   - Business-related phone calls or internet charges.\n   - Necessary supplies or equipment for business purposes.\n\n### **Common Excluded Travel Expenses:**\n1. **Personal Expenses:**\n   - Leisure activities, sightseeing, or personal entertainment.\n   - Family or companion travel costs.\n   - Upgrades to first-class or business-class travel unless pre-approved.\n\n2. **Luxury Accommodations and Services:**\n   - Luxury hotel suites exceeding the standard room rate.\n   - Spa services, personal grooming, or other non-essential amenities.\n\n3. **Fines and Penalties:**\n   - Traffic tickets, parking fines, or other legal penalties incurred during travel.\n   \n4. **Non-Business Related Costs:**\n   - Expenses for extending trips beyond the business purpose.\n   - Costs associated with changing personal travel plans.\n\n5. **Alcoholic Beverages:**\n   - Unless specifically approved for business meals or events.\n\n### **Recommendations:**\n- **Review Your Company\u2019s Policy:** Always refer to your specific company policy document for detailed information, as policies can vary significantly between organizations.\n- **Seek Clarification:** If you're unsure whether a particular expense is reimbursable, consult with your HR or finance department before incurring the cost.\n- **Maintain Receipts:** Keep all relevant receipts and documentation to support your reimbursement claims.\n\nBy adhering to your company's travel reimbursement guidelines, you can ensure that your expense claims are processed smoothly and in compliance with organizational policies."
+    }
+]
